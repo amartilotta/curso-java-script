@@ -1,0 +1,26 @@
+*
+{
+  /* margin:0; */
+  /* padding: 0; */
+  /* box-sizing: border-box; */
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  /* background: #0e1538; */
+}
+
+.swal-custom-popup {
+  border-radius: 46px 7px;
+}
+.swal-custom-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: clamp(16px, 4vw, 32px);
+}
