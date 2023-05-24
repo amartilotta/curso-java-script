@@ -1,19 +1,47 @@
-*
+*{
+  margin: 0;
+  font-family: 'Arial', Times, serif;
+}
+.container{
+  display: flex;
+  
+}
+/* .container div{
+  height: 100vh;
+} */
+.container #lado-izquierdo,
+.container #lado-central,
+.container #lado-derecho
 {
-  /* margin:0; */
-  /* padding: 0; */
-  /* box-sizing: border-box; */
-  font-family: 'Poppins', sans-serif;
+  height: 100vh;
 }
 
-body{
+#lado-izquierdo{
+  background-color: white;
+  width: 45%;
+}
+#lado-central{
+  background-color: black;
+  width: 3%;
+}
+#lado-derecho{
+  background-color: rgb(195, 4, 4);
+  width: 65%;
+  
+}
+#circulo {
+  position: absolute;
+  height: 10%;
+  width: 20%;
+  right: 44%;
+  bottom: 13%;
+  border-radius: 100%;
+  background-color: white;
+  border: 1.3rem solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 100vh; */
-  /* background: #0e1538; */
 }
-
 .swal-custom-popup {
   border-radius: 46px 7px;
 }
@@ -23,4 +51,197 @@ body{
   text-overflow: ellipsis;
   max-width: 100%;
   font-size: clamp(16px, 4vw, 32px);
+}
+
+/*Estilos a los elementos del primer bloque*/
+#titulo{
+  margin-top: 20vh;
+  text-align: center;
+}
+#titulo h1{
+  font-size: 28px;
+}
+#input-text{
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+#input-text input{
+  width: 88%;
+  border-width: 0.2px
+}
+#apiButton{
+  cursor: pointer;
+  background-color: white;
+  border: 0;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+/*Estilos a los elementos del tercer bloque*/
+#header-div{
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  background-color: #CFD2CF;
+  height: 6%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  
+}
+#header-div h5{
+  padding: 10px;
+}
+#footer-div{
+  border-bottom-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  background-color: #CFD2CF;
+  height: 4%;
+  width: 70%;
+}
+#body-div{
+  min-height: 13%;
+  background-color: #ffffff;
+  width: 70%;
+}
+
+#tabla{
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.historial-item{
+  padding: 10px;
+}
+#clearHistorial{
+    margin-top: 1rem;
+    background-color: rgb(52, 124, 196);
+    border: 0;
+    padding: 0.5rem;
+    font-size: 15px;
+    border-radius: 9%;
+    font-weight: bold;
+} 
+
+/*Puntos de quiebre*/
+/*Tablet*/
+@media (min-width: 768px) { 
+  #circulo {
+    height: 18%;
+    right: 45.3%;
+    border: 1.7rem solid black;
+  }
+  #lado-central{
+  width: 5%;
+  }
+  #apiButton{
+    font-size: 14px;
+  }
+
+}
+/*Notebook*/
+@media (min-width: 1024px) { 
+  #circulo {
+    height: 24%;
+    right: 45.8%;
+    border: 2rem solid black;
+  }
+  #titulo h1{
+    font-size: 50px;
+  }
+  #apiButton{
+    font-size: 19px;
+
+  }
+  #input-text input{
+  padding: 0.5rem;
+  width: 65%;
+  }
+
+}
+/*PC*/
+@media (min-width: 1200px) { 
+  #circulo {
+    height: 29%;
+    right: 51.1%;
+    border: 2.5rem solid black
+  }
+  #lado-izquierdo{
+    background-color: white;
+    width:35%;
+  }
+  #apiButton{
+    font-size: 23px;
+  }
+  #titulo h1{
+    font-size: 45px;
+  }
+  #header-div h5{
+    font-size: 20px;
+  }
+  #clearHistorial{
+    padding: 0.8rem;
+    font-size: 18px;
+  } 
+  
+}
+/* PC 2*/
+@media (min-width: 1400px) { 
+  #circulo {
+    height: 34%;
+    right: 51%;
+    border: 3rem solid black
+  }
+
+  #apiButton{
+    font-size: 28px;
+  }
+  #titulo h1{
+    font-size: 55px;
+  }
+  #header-div h5{
+    font-size: 22px;
+  }
+  #clearHistorial{
+    padding: 1rem;
+    font-size: 22px;
+  } 
+  
+}
+/* Monitor 1920px */
+@media (min-width: 1920px) { 
+  #circulo {
+    height: 35%;
+    right: 51%;
+    border: 4rem solid black
+  }
+
+  #apiButton{
+    font-size: 37px;
+  }
+  #titulo h1{
+    font-size: 68px;
+  }
+  #header-div h5{
+    font-size: 24px;
+  }
+  #clearHistorial{
+    padding: 1rem;
+    font-size: 25px;
+  }
+  #input-text input{
+    padding: 1rem;
+    width: 65%;
+  } 
+  
 }

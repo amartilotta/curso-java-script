@@ -8,15 +8,42 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./assets/css/styles-poke.css">
     <link rel="icon" href="./assets/img/pokeball.png">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <title>Pokedex</title>
 </head>
 <body>
-    <input type="text" id="pokemonNameInput">
-    <button id="apiButton">Buscar Pokemon</button>
-    <button id="clearHistorial">Limpiar Historial</button>
-    <span id="historial"></span>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <div class="container">
+        <div id="lado-izquierdo">
+            <div id="titulo">
+                <h1>Pokédex</h1>
+            </div>
+            <div id="input-text">
+                <input type="text" id="pokemonNameInput" placeholder="Pokémon">
+            </div>
+        </div>
+        <div id="lado-central"></div>
+        <div id="lado-derecho">
+            <div id="tabla">
+                <div id="header-div">
+                    <h5>HISTORIAL DE POKEMON</h5>
+                </div>
+                <div id="body-div">
+                    <ul id="historial-div"></ul>
+                </div>
+                <div id="footer-div"></div>
+                <div id="limpiar-tabla">
+                    <button id="clearHistorial">Limpiar Historial</button>
+                </div>
+                
+            </div>
+        </div>
+        <div id="circulo">
+            <button id="apiButton">BUSCAR POKEMON</button>
+        </div>
+        
+    </div>
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./assets/js/miArchivo.js"></script>
 </body>
 </html>

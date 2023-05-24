@@ -1,5 +1,5 @@
 const apiButton = document.getElementById("apiButton");
-const historial = document.getElementById("historial");
+const historial = document.getElementById("historial-div");
 const clearHistorialButton = document.getElementById("clearHistorial");
 const pokemonNameInput = document.getElementById("pokemonNameInput"); // Obtengo lo que haya escrito en el input del html
 
@@ -87,16 +87,25 @@ const callApi = async (pokemonName) => {
 
 function updateHistorial() {
     const pokemones = JSON.parse(localStorage.getItem("pokemones"));
+    historial.innerHTML = ""
     if (!pokemones) {
-        historial.innerHTML = ""
+        // historial.style.display = 'none';
         clearHistorialButton.style.visibility = "hidden"
     } else {
+        historial.style.display = 'block';
         clearHistorialButton.style.visibility = "visible"
 
-        historial.innerHTML = `
-            <h2>HISTORIAL DE POKEMON</h2>
-            - ${pokemones.map((pokemon) => capitalize(pokemon.name)).join("<br> - ")}
-        `
+        // historial.innerHTML = `
+        //     - ${pokemones.map((pokemon) => capitalize(pokemon.name)).join("<br> - ")}
+        // `
+        pokemones.forEach(
+            (pokemon) => {
+                let item = document.createElement("li");
+                item.className = 'historial-item'
+                item.innerHTML = `${capitalize(pokemon.name)}`
+                historial.append(item);
+            }
+        )
     }
 }
 function clearHistorial() {
