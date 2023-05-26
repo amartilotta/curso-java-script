@@ -1,50 +1,92 @@
-*{
+* {
+  outline: 0;
   margin: 0;
   font-family: 'Arial', Times, serif;
 }
-.container{
+
+.container {
   display: flex;
-  
+
 }
+
 /* .container div{
   height: 100vh;
 } */
 .container #lado-izquierdo,
 .container #lado-central,
-.container #lado-derecho
-{
+.container #lado-derecho {
   height: 100vh;
 }
 
-#lado-izquierdo{
+#lado-izquierdo {
   background-color: white;
   width: 45%;
 }
-#lado-central{
+
+#lado-central {
   background-color: black;
   width: 3%;
 }
-#lado-derecho{
+
+#lado-derecho {
   background-color: rgb(195, 4, 4);
   width: 65%;
-  
+
 }
-#circulo {
+
+
+.circulo-absolute {
   position: absolute;
-  height: 10%;
-  width: 20%;
-  right: 44%;
-  bottom: 13%;
-  border-radius: 100%;
-  background-color: white;
-  border: 1.3rem solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
+.body-circulo {
+  display: flex;
+  position: relative;
+}
+
+.div-circulo {
+  width: 110px;
+  left: 26vw;
+  height: auto;
+  position: absolute;
+  bottom: 10vh;
+}
+
+.circulos {
+  transition: background-color 0.25s ease-in-out;
+  width: 100%;
+  /* Ancho del círculo */
+  outline: 9px solid rgb(0, 0, 0);
+  padding-bottom: 100%;
+  /* Altura del círculo */
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.circulos:hover {
+  
+  background-color: rgb(174, 0, 0);
+}
+
+.circulos:hover #apiButton {
+  
+  color: white;
+}
+
+.circulos {
+  width: 100%;
+  /* Ancho del círculo */
+  outline: 9px solid rgb(0, 0, 0);
+  padding-bottom: 100%;
+  /* Altura del círculo */
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
 .swal-custom-popup {
   border-radius: 46px 7px;
 }
+
 .swal-custom-title {
   white-space: nowrap;
   overflow: hidden;
@@ -54,34 +96,40 @@
 }
 
 /*Estilos a los elementos del primer bloque*/
-#titulo{
+#titulo {
   margin-top: 20vh;
   text-align: center;
 }
-#titulo h1{
+
+#titulo h1 {
   font-size: 28px;
 }
-#input-text{
+
+#input-text {
   display: flex;
   justify-content: center;
   margin-top: 5vh;
 }
-#input-text input{
+
+#input-text input {
   width: 88%;
   border-width: 0.2px
 }
-#apiButton{
+
+#apiButton {
+  transition: color 0.25s ease-in-out;
   cursor: pointer;
-  background-color: white;
+  position: absolute;
+  background-color: transparent;
   border: 0;
-  border-radius: 50%;
+  top: 30%;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 
 /*Estilos a los elementos del tercer bloque*/
-#header-div{
+#header-div {
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
   background-color: #CFD2CF;
@@ -93,155 +141,184 @@
   font-size: 14px;
   text-align: center;
   font-weight: bold;
-  
+
 }
-#header-div h5{
+
+#header-div h5 {
   padding: 10px;
 }
-#footer-div{
+
+#footer-div {
   border-bottom-left-radius: 80%;
   border-bottom-right-radius: 80%;
   background-color: #CFD2CF;
   height: 4%;
   width: 70%;
 }
-#body-div{
+
+#body-div {
   min-height: 13%;
   background-color: #ffffff;
   width: 70%;
 }
 
-#tabla{
-  height: 60vh;
+#tabla {
+  height: 56vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  
+  margin-top: 190px;
 }
 
-.historial-item{
+#historial-div {
+  overflow: auto;
+  height: 100%;
+}
+
+.historial-item {
   padding: 10px;
 }
-#clearHistorial{
-    margin-top: 1rem;
-    background-color: rgb(52, 124, 196);
-    border: 0;
-    padding: 0.5rem;
-    font-size: 15px;
-    border-radius: 9%;
-    font-weight: bold;
-} 
+
+#clearHistorial {
+  margin-top: 1rem;
+  background-color: rgb(52, 124, 196);
+  border: 0;
+  padding: 0.5rem;
+  font-size: 15px;
+  border-radius: 9%;
+  font-weight: bold;
+}
 
 /*Puntos de quiebre*/
 /*Tablet*/
-@media (min-width: 768px) { 
-  #circulo {
-    height: 18%;
-    right: 45.3%;
-    border: 1.7rem solid black;
+@media (min-width: 768px) {
+
+  #lado-central {
+    width: 5%;
   }
-  #lado-central{
-  width: 5%;
+
+  #apiButton {
+    font-size: 30px;
   }
-  #apiButton{
-    font-size: 14px;
+  .div-circulo {
+    width: 200px;
+    left: 28vw;
+  }
+  .circulos {
+    outline-width: 29px;
   }
 
 }
+
 /*Notebook*/
-@media (min-width: 1024px) { 
-  #circulo {
-    height: 24%;
-    right: 45.8%;
-    border: 2rem solid black;
-  }
-  #titulo h1{
+@media (min-width: 1024px) {
+
+  #titulo h1 {
     font-size: 50px;
   }
-  #apiButton{
-    font-size: 19px;
 
+
+  #input-text input {
+    padding: 0.5rem;
+    width: 65%;
   }
-  #input-text input{
-  padding: 0.5rem;
-  width: 65%;
+  .div-circulo {
+    width: 220px;
+    left: 30.5vw;
+  }
+  .circulos {
+    outline-width: 34px;
   }
 
 }
+
 /*PC*/
-@media (min-width: 1200px) { 
-  #circulo {
-    height: 29%;
-    right: 51.1%;
-    border: 2.5rem solid black
-  }
-  #lado-izquierdo{
+@media (min-width: 1200px) {
+
+  #lado-izquierdo {
     background-color: white;
-    width:35%;
+    width: 35%;
   }
-  #apiButton{
-    font-size: 23px;
+
+  #apiButton {
+    font-size: 40px;
   }
-  #titulo h1{
+
+  #titulo h1 {
     font-size: 45px;
   }
-  #header-div h5{
+
+  #header-div h5 {
     font-size: 20px;
   }
-  #clearHistorial{
+
+  #clearHistorial {
     padding: 0.8rem;
     font-size: 18px;
-  } 
-  
-}
-/* PC 2*/
-@media (min-width: 1400px) { 
-  #circulo {
-    height: 34%;
-    right: 51%;
-    border: 3rem solid black
+  }
+  .div-circulo {
+    width: 260px;
+    left: 25vw;
   }
 
-  #apiButton{
-    font-size: 28px;
-  }
-  #titulo h1{
+}
+
+/* PC 2*/
+@media (min-width: 1400px) {
+
+  #titulo h1 {
     font-size: 55px;
   }
-  #header-div h5{
+
+  #header-div h5 {
     font-size: 22px;
-  }
-  #clearHistorial{
-    padding: 1rem;
-    font-size: 22px;
-  } 
-  
-}
-/* Monitor 1920px */
-@media (min-width: 1920px) { 
-  #circulo {
-    height: 35%;
-    right: 51%;
-    border: 4rem solid black
   }
 
-  #apiButton{
-    font-size: 37px;
+  #clearHistorial {
+    padding: 1rem;
+    font-size: 22px;
   }
-  #titulo h1{
+  .div-circulo {
+    width: 260px;
+    left: 26.8vw;
+  }
+  .circulos {
+    outline-width: 40px;
+  }
+
+}
+
+/* Monitor 1920px */
+@media (min-width: 1920px) {
+
+
+  #apiButton {
+    font-size: 40px;
+  }
+
+  #titulo h1 {
     font-size: 68px;
   }
-  #header-div h5{
+
+  #header-div h5 {
     font-size: 24px;
   }
-  #clearHistorial{
+
+  #clearHistorial {
     padding: 1rem;
     font-size: 25px;
   }
-  #input-text input{
+
+  #input-text input {
     padding: 1rem;
     width: 65%;
-  } 
-  
+  }
+  .div-circulo {
+    width: 290px;
+    left: 28vw;
+  }
+  .circulos {
+    outline-width: 50px;
+  }
+
 }
