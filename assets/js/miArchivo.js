@@ -36,6 +36,8 @@ const searchPokemon = () => {
     if (!pokemon) {
         return Toastify({
             text: "ESCRIBA UN POKEMON",
+            gravity: "bottom", // `top` or `bottom`
+            position: "left",
             className: "info",
             style: {
                 background: "linear-gradient(to right, #CF010B, #991F36)",
@@ -78,8 +80,9 @@ const callApi = async (pokemonName) => {
     //para imprimir sus datos.
     //Caso contrario, se realizara la busqueda en la api de Pokémon
     let pokemones = JSON.parse(localStorage.getItem("pokemones")) || [];
+    
     const pokemonInStorage = pokemones.find(
-        (pokemon) => pokemon.name === pokemonName
+        (pokemon) => pokemon.name === pokemonName || pokemon.id === parseInt(pokemonName)
     );
 
     if (pokemonInStorage) return pokemonInStorage;
